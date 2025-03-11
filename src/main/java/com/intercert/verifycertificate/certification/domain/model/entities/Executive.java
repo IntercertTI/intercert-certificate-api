@@ -2,12 +2,10 @@ package com.intercert.verifycertificate.certification.domain.model.entities;
 
 import com.intercert.verifycertificate.certification.domain.model.valueobjects.ExecutiveType;
 import com.intercert.verifycertificate.shared.domain.model.entities.AuditableModel;
-import jakarta.annotation.Nullable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @NoArgsConstructor
@@ -16,22 +14,21 @@ public class Executive extends AuditableModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Nullable
-    private Long coachId;
+    @Setter
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "coach_id")
+    private Executive coach;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private ExecutiveType executiveType;
 
     public Executive(String name, ExecutiveType executiveType) {
         this.name = name;
         this.executiveType = executiveType;
     }
-
-
-
-
-
 
 
 }
