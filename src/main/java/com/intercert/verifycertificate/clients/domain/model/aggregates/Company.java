@@ -4,11 +4,13 @@ import com.intercert.verifycertificate.clients.domain.model.entities.CompanySect
 import com.intercert.verifycertificate.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Company extends AuditableAbstractAggregateRoot<Company> {
 
     @NotNull
@@ -21,7 +23,7 @@ public class Company extends AuditableAbstractAggregateRoot<Company> {
     @Column(columnDefinition = "TEXT")
     private String activitiesDescription;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sector_id")
     @NotNull
     @Setter
