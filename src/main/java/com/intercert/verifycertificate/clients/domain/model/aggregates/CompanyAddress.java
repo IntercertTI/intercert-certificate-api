@@ -21,6 +21,9 @@ public class CompanyAddress extends AuditableAbstractAggregateRoot<CompanyAddres
     private String email;
 
     @NotNull
+    private String country;
+
+    @NotNull
     private String taxDomicle;
 
     public CompanyAddress(Company company,String phone, String email, String taxDomicle) {
