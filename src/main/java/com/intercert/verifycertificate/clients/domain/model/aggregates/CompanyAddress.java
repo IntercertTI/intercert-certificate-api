@@ -24,13 +24,14 @@ public class CompanyAddress extends AuditableAbstractAggregateRoot<CompanyAddres
     private String country;
 
     @NotNull
+    @Column(columnDefinition = "TEXT")
     private String taxDomicle;
 
-    public CompanyAddress(Company company,String phone, String email, String taxDomicle) {
+    public CompanyAddress(Company company,String phone, String email, String taxDomicile) {
         this.company = company;
         this.phone = phone;
         this.email = email;
-        this.taxDomicle = taxDomicle;
+        this.taxDomicle = taxDomicile;
     }
 
 }
