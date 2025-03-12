@@ -23,6 +23,7 @@ public class Executive extends AuditableModel {
     private String name;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private ExecutiveType executiveType;
 
     public Executive(String name, ExecutiveType executiveType) {
