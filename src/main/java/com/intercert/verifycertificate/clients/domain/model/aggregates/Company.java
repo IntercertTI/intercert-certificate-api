@@ -5,6 +5,7 @@ import com.intercert.verifycertificate.shared.domain.model.aggregates.AuditableA
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @NoArgsConstructor
@@ -23,6 +24,7 @@ public class Company extends AuditableAbstractAggregateRoot<Company> {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sector_id")
     @NotNull
+    @Setter
     private CompanySector sector;
 
 
