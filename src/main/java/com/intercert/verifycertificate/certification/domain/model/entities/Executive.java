@@ -4,11 +4,13 @@ import com.intercert.verifycertificate.certification.domain.model.valueobjects.E
 import com.intercert.verifycertificate.shared.domain.model.entities.AuditableModel;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Executive extends AuditableModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
