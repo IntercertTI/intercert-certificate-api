@@ -18,8 +18,6 @@ public class CompanyCommandServiceImpl implements CompanyCommandService {
         this.sectorRepository = sectorRepository;
     }
 
-
-
     @Override
     public Long handle(CreateCompanyCommand command) {
 
