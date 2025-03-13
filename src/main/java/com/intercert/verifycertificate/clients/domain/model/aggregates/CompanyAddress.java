@@ -4,10 +4,12 @@ import com.intercert.verifycertificate.shared.domain.model.aggregates.AuditableA
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class CompanyAddress extends AuditableAbstractAggregateRoot<CompanyAddress> {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -25,13 +27,14 @@ public class CompanyAddress extends AuditableAbstractAggregateRoot<CompanyAddres
 
     @NotNull
     @Column(columnDefinition = "TEXT")
-    private String taxDomicle;
+    private String taxDomicile;
 
-    public CompanyAddress(Company company,String phone, String email, String taxDomicile) {
+    public CompanyAddress(Company company, String phone, String email, String country, String taxDomicile) {
         this.company = company;
         this.phone = phone;
         this.email = email;
-        this.taxDomicle = taxDomicile;
+        this.country = country;
+        this.taxDomicile = taxDomicile;
     }
 
 }
