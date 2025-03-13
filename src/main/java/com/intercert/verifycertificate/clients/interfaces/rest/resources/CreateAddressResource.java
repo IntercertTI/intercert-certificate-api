@@ -1,6 +1,6 @@
-package com.intercert.verifycertificate.clients.domain.model.commands;
+package com.intercert.verifycertificate.clients.interfaces.rest.resources;
 
-public record CreateCompanyAddressCommand(
+public record CreateAddressResource(
         String companyTaxCode,
         String phone,
         String email,
