@@ -1,6 +1,7 @@
 package com.intercert.verifycertificate.clients.application.internal.queryservices;
 
 import com.intercert.verifycertificate.clients.domain.model.aggregates.Company;
+import com.intercert.verifycertificate.clients.domain.model.queries.GetCompanyByIdQuery;
 import com.intercert.verifycertificate.clients.domain.model.queries.GetCompanyByTaxCodeQuery;
 import com.intercert.verifycertificate.clients.domain.services.CompanyQueryService;
 import com.intercert.verifycertificate.clients.infrastructure.persistence.jpa.repositories.CompanyRepository;
@@ -20,6 +21,11 @@ public class CompanyQueryServiceImpl implements CompanyQueryService {
     @Override
     public Optional<Company> handle(GetCompanyByTaxCodeQuery query) {
         return this.companyRepository.findByTaxCode(query.taxCode());
+    }
+
+    @Override
+    public Optional<Company> handle(GetCompanyByIdQuery query) {
+        return this.companyRepository.findById(query.companyId());
     }
 
 
