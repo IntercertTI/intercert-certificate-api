@@ -9,12 +9,14 @@ import com.intercert.verifycertificate.shared.domain.model.aggregates.AuditableA
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Certificate extends AuditableAbstractAggregateRoot<Certificate> {
 
 

@@ -4,11 +4,13 @@ import com.intercert.verifycertificate.shared.domain.model.entities.AuditableMod
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class IsoNorm extends AuditableModel {
 
     @Id
