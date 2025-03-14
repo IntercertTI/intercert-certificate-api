@@ -35,7 +35,7 @@ public class CompanyCommandServiceImpl implements CompanyCommandService {
             this.companyRepository.save(newCompany);
             return newCompany.getId();
         } catch (Exception e) {
-            throw new RuntimeException("Error saving company");
+            throw new RuntimeException("Error saving company: " + e.getMessage());
         }
     }
 }
